@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viemodels="clr-namespace:Employee.ViewModels"
+             x:Class="Employee.EmployeesList"
+             Title="Employees List">
+    <VerticalStackLayout Margin="15">
+        <Label Text="Employees List" FontSize="20"/>
+        <Button Text="Add Employee" Command="{Binding AddUpdateEmployeeCommand}" HorizontalOptions="EndAndExpand"/>
+
+
+        <CollectionView ItemsSource="{Binding Employees}">
+            <CollectionView.ItemTemplate>
+
+
+                <DataTemplate>
+                    <Frame>
+                        <StackLayout Margin="10">
+                            <HorizontalStackLayout Spacing="10" >
+
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding MiddleName}" />
+                                <Label Text="{Binding Family}" />
+                                <Label Text="{Binding EmailAddress}" />
+                                <Label Text="{Binding DateOfBirth}" />
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

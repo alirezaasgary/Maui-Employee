@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Employee.AddEmployee"
+             Title="Add new Employee1">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="15" >
+        <VerticalStackLayout>
+            <Label Text="FirstName" />
+            <Entry Text="{Binding EmployeeDetails.Name}" Placeholder="First Name" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Middle Name"  />
+            <Entry Text="{Binding EmployeeDetails.MiddleName}" Placeholder="Middle Name" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Last Name" />
+            <Entry Text="{Binding EmployeeDetails.Family}" Placeholder="Last Name" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Email Address" />
+            <Entry Text="{Binding EmployeeDetails.EmailAddress}" Placeholder="Email Address" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="DoB" />
+            <DatePicker Date ="{Binding EmployeeDetails.DateOfBirth}" />
+        </VerticalStackLayout>
+
+        <Button Command="{Binding AddEmployeeCommand}" Text="Add employee" />
+    </StackLayout>
+
+</ContentPage>
