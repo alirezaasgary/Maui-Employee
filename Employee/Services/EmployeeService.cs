@@ -28,17 +28,7 @@ namespace Employee.Services
         }
         public async Task<int> AddEmployees(Model.Employee employee)
         {
-            await SetapDatabase();
-            try
-            {
-                return await _dbConnection.InsertAsync(employee);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
+            return await _dbConnection.InsertAsync(employee);
         }
 
         public async Task<int> DeleteEmployees(Model.Employee employee)
